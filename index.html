@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-200">
+    <div class="text-center">
+        <h1 class="text-4xl mb-4">URL Shortener</h1>
+        <div class="relative">
+            <input type="text" id="url-input" class="border p-2 w-64" placeholder="Enter URL here">
+            <div id="url-input-tooltip" class="absolute top-full mt-2 p-2 bg-red-500 text-white rounded hidden">Please enter a valid URL.</div>
+        </div>
+        <button onclick="shortenURL()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Shorten</button>
+        <div class="relative">
+            <p id="result" class="mt-4"></p>
+            <div id="result-tooltip" class="absolute top-full mt-2 p-2 bg-green-500 text-white rounded hidden">Shortened URL copied to clipboard!</div>
+        </div>
+        <button id="copy-button" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4 hidden" onclick="copyToClipboard()">Copy</button>
+        <div id="spinner" class="mt-4 hidden">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <audio id="audio" src="click-sound.mp3"></audio>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<script src="/assets/js/script.js"></script>
+</html>
